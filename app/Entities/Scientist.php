@@ -72,6 +72,5 @@ class Scientist
     public function getTheories()
     {
         return $this->theories;
-        return $this->theories;
     }
 }
