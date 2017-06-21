@@ -18,7 +18,7 @@
 
                 <p><input autofocus type="text" placeholder="Name..." name="name" class="form-control" value="{{ $task->getName() }}" /></p>
                 <p><input type="text" placeholder="Description..." name="description" class="form-control" value="{{ $task->getDescription() }}" /></p>
-                <p>
+                <!--<p>
                     <select class="form-control" name="userId" id="userId">
                     @foreach($user as $user)
                         <option value="{{ $user->getId() }}" {{ $user->getId() == $userId ? 'selected' : '' }}>
@@ -26,7 +26,7 @@
                         </option>
                     @endforeach
                     </select>
-                </p>
+                </p>-->
                 <hr>
 
                 <p><button class="form-control btn btn-success">Save Task</button></p>

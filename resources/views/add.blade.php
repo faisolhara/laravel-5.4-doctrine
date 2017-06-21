@@ -21,7 +21,7 @@
                 @if($errors->has('description'))
                     <span class="help-block">{{ $errors->first('description') }}</span>
                 @endif
-                <p>
+                <!--<p>
                     <select class="form-control" name="userId" id="userId">
                     @foreach($user as $user)
                         <option value="{{ $user->getId() }}">
@@ -29,7 +29,7 @@
                         </option>
                     @endforeach
                     </select>
-                </p>
+                </p>-->
 
                 <hr>
 

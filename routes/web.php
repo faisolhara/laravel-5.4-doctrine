@@ -85,7 +85,7 @@ Route::get('test-rel', function(\Doctrine\ORM\EntityManagerInterface $em) {
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('test-user', function(\Doctrine\ORM\EntityManagerInterface $em) {
-        $user = new \App\Entities\User('Francesco', 'francescomalatesta@live.it');
+        $user = new \App\Entities\User('Faisol', 'sfaisolandi@gmail.com');
         $user->setPassword(bcrypt('123456'));
 
         $em->persist($user);
@@ -95,6 +95,10 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('login', function() {
         return view('login');
     });
+
+    Route::get('login', ['as' => 'login', function() {
+        return view('login');
+    }]);
 
     Route::post('login', function(\Illuminate\Http\Request $request) {
         if(\Auth::attempt([
@@ -112,6 +116,6 @@ Route::group(['middleware' => ['web']], function () {
     });
 
     Route::group(['middleware' => ['auth']], function () {
-            return redirect('/view-index');
+            return redirect('/login');
     });
 });

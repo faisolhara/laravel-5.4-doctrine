@@ -9,6 +9,10 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class TaskController extends Controller
 {
+    public function __construct(){
+        $this->middleware('auth');      
+    }
+
     public function getIndex(EntityManagerInterface $em)
     {
         // $tasks = $em->getRepository(Task::class)->findAll();
@@ -18,7 +22,7 @@ class TaskController extends Controller
         //             ->getQuery()
         //             ->getResult();
         /* @var User $user */
-        
+
         $user = \Auth::user();
 
         $tasks = $user->getTasks();
@@ -51,6 +55,7 @@ class TaskController extends Controller
             $request->get('name'),
             $request->get('description')
         );
+
         // $user = $em->getRepository(User::class)->find($request->get('userId'));
         // $task->setUser($user);
 
